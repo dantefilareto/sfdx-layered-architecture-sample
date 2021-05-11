@@ -1,0 +1,17 @@
+
+
+
+Service layer
+https://trailhead.salesforce.com/es-MX/content/learn/modules/apex_patterns_sl
+
+Domain & selector layers
+https://trailhead.salesforce.com/es-MX/content/learn/modules/apex_patterns_dsl  
+
+Architecture guidelines for triggered automation (includes flow performance analysis)
+https://dantefilareto.quip.com/VJfCAFhEBO0W/Architects-Guide-to-Building-Record-Triggered-Automation-on-Salesforce-Using-Clicks-and-Code
+
+SOLID Principles
+https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html
+
+Factory asbtract & other patterns
+https://refactoring.guru/design-patterns/abstract-factory
