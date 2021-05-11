@@ -88,4 +88,27 @@ public with sharing virtual class EntityCrud {
         System.debug(LoggingLevel.DEBUG, 'fieldMapping ' + fieldMapping);
         return fieldMapping;
     }
+    /**
+     * @description     This method provides basic creation functionality
+     * @param  myRecord the record to insert in the database
+     * @return          returns the same record plus the new id
+     */
+    protected virtual Sobject insertOne(Sobject myRecord){
+        System.debug(LoggingLevel.DEBUG, 'insertOne');
+        System.debug(LoggingLevel.DEBUG, 'myRecord ' + myRecord);
+        database.insert(myRecord);
+        System.debug(LoggingLevel.DEBUG, 'myRecord.Id ' + myRecord.Id);
+        return myRecord;
+    }
+    /**
+     * @description     This method provides basic creation functionality
+     * @param  myRecord the record to insert in the database
+     * @return          returns the same record plus the new id
+     */
+    protected virtual Sobject updateOne(Sobject myRecord){
+        System.debug(LoggingLevel.DEBUG, 'updateOne');
+        System.debug(LoggingLevel.DEBUG, 'myRecord ' + myRecord);
+        database.update(myRecord);
+        return myRecord;
+    }
 }

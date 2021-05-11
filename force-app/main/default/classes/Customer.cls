@@ -5,8 +5,11 @@
  * and can contain business logic related to building instances
  */
 public with sharing class Customer extends Entity implements EntityInterface, TriggerHandlerInterface {
+    
     public String name;
+
     private final Type SOBJECT_TYPE = Account.class;
+    
     private final Map<String, String> FIELD_MAP = new Map<String, String>{
         'id'=>'Id',
         'name'=>'Name'
@@ -16,9 +19,9 @@ public with sharing class Customer extends Entity implements EntityInterface, Tr
      * @return   return description
      */
     public Customer() {
-        // iterate over all properties
         super();
         System.debug(LoggingLevel.DEBUG, 'Customer');
+        // iterate over all properties or manually map
         this.name = null;
     }
     /**
