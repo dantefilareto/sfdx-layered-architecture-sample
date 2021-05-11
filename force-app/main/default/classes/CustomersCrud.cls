@@ -14,7 +14,7 @@ public with sharing class CustomersCrud extends EntityCrud {
      * @return            returns an instance of thar customer or throws exception
      */
     public Customer selectOneCustomerById(String customerId, List<String> properties){
-        System.debug(LoggingLevel.DEBUG, 'selectOneCustomerById');
+        System.debug(LoggingLevel.DEBUG, 'CustomersCrud.selectOneCustomerById');
         System.debug(LoggingLevel.DEBUG, 'customerId ' + customerId);
         Map<String, String> fieldMapping = getFieldMapping(domainType);
         System.debug(LoggingLevel.DEBUG, 'fieldMapping ' + fieldMapping);
@@ -32,7 +32,7 @@ public with sharing class CustomersCrud extends EntityCrud {
      * @return            returns the new customer with Id
      */
     public Customer insertOneCustomer(Customer myCustomer){
-        System.debug(LoggingLevel.DEBUG, 'insertOneCustomer');
+        System.debug(LoggingLevel.DEBUG, 'CustomersCrud.insertOneCustomer');
         System.debug(LoggingLevel.DEBUG, 'myCustomer ' + myCustomer);
         Sobject myRecord = myCustomer.toSobject();
         System.debug(LoggingLevel.DEBUG, 'myRecord ' + myRecord);
@@ -46,7 +46,7 @@ public with sharing class CustomersCrud extends EntityCrud {
      * @return            returns the same record
      */
     public Customer updateOneCustomer(Customer myCustomer){
-        System.debug(LoggingLevel.DEBUG, 'insertOneCustomer');
+        System.debug(LoggingLevel.DEBUG, 'CustomersCrud.insertOneCustomer');
         System.debug(LoggingLevel.DEBUG, 'myCustomer ' + myCustomer);
         Sobject myRecord = myCustomer.toSobject();
         System.debug(LoggingLevel.DEBUG, 'myRecord ' + myRecord);

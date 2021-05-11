@@ -49,10 +49,11 @@ public with sharing class Customer extends Entity implements EntityInterface, Tr
      * @return   returns an instance of the sObject
      */
     public sObject toSobject(){
-        System.debug(LoggingLevel.DEBUG, 'toSobject');
+        System.debug(LoggingLevel.DEBUG, 'Customer.toSobject');
         Account myAccount = new Account();
         // iterate over all properties or manually map
         myAccount.Id = this.id;
+        myAccount.Name = this.name;
         System.debug(LoggingLevel.DEBUG, 'myAccount ' + myAccount);
         return (sObject) myAccount;
     }

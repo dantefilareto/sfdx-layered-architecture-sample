@@ -16,7 +16,7 @@ public with sharing virtual class EntityCrud {
      * @return              returns the result of the query execution
      */
     protected virtual SObject selectOneById(List<String> fieldList, String tableName, Id recordId){
-        System.debug(LoggingLevel.DEBUG, 'selectOneById()');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.selectOneById()');
         System.debug(LoggingLevel.DEBUG, 'fieldList ' + fieldList);
         System.debug(LoggingLevel.DEBUG, 'recordId ' + recordId);
         List<String> params = new List<String> { String.join(fieldList, ', '), tableName, 'recordId', '1' };
@@ -36,7 +36,7 @@ public with sharing virtual class EntityCrud {
      * @return              returns the result of the query execution
      */
     protected virtual List<SObject> selectManyById(List<String> fieldList, String tableName, Set<Id> recordIds){
-        System.debug(LoggingLevel.DEBUG, 'selectOneById()');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.selectOneById()');
         System.debug(LoggingLevel.DEBUG, 'fieldList ' + fieldList);
         System.debug(LoggingLevel.DEBUG, 'recordIds ' + recordIds);
         List<String> params = new List<String> { String.join(fieldList, ', '), tableName, 'recordIds'};
@@ -53,7 +53,7 @@ public with sharing virtual class EntityCrud {
      * @return            returns the sobject name
      */
     protected virtual String getSobjectName(Type domainType){
-        System.debug(LoggingLevel.DEBUG, 'getSobjectName()');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.getSobjectName()');
         EntityInterface entityInstance = (EntityInterface) domainType.newInstance();
         String sobjectName = entityInstance.getSobjectName();
         System.debug(LoggingLevel.DEBUG, 'sobjectName ' + sobjectName);
@@ -66,7 +66,7 @@ public with sharing virtual class EntityCrud {
      * @return              returns a list of sObject fields
      */ 
     protected virtual List<String> getSfieldNames(List<String> properties, Map<String, String> fieldMapping){
-        System.debug(LoggingLevel.DEBUG, 'getSfieldNames()');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.getSfieldNames()');
         System.debug(LoggingLevel.DEBUG, 'properties ' + properties);
         System.debug(LoggingLevel.DEBUG, 'fieldMapping ' + fieldMapping);
         List<String> fields = new List<String>();
@@ -82,7 +82,7 @@ public with sharing virtual class EntityCrud {
      * @return              returns the field mapping
      */
     protected virtual Map<String, String> getFieldMapping(Type domainType){
-        System.debug(LoggingLevel.DEBUG, 'getFieldMapping()');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.getFieldMapping()');
         EntityInterface entityInstance = (EntityInterface) domainType.newInstance();
         Map<String, String> fieldMapping = entityInstance.getFieldMapping();
         System.debug(LoggingLevel.DEBUG, 'fieldMapping ' + fieldMapping);
@@ -94,7 +94,7 @@ public with sharing virtual class EntityCrud {
      * @return          returns the same record plus the new id
      */
     protected virtual Sobject insertOne(Sobject myRecord){
-        System.debug(LoggingLevel.DEBUG, 'insertOne');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.insertOne');
         System.debug(LoggingLevel.DEBUG, 'myRecord ' + myRecord);
         database.insert(myRecord);
         System.debug(LoggingLevel.DEBUG, 'myRecord.Id ' + myRecord.Id);
@@ -106,7 +106,7 @@ public with sharing virtual class EntityCrud {
      * @return          returns the same record plus the new id
      */
     protected virtual Sobject updateOne(Sobject myRecord){
-        System.debug(LoggingLevel.DEBUG, 'updateOne');
+        System.debug(LoggingLevel.DEBUG, 'EntityCrud.updateOne');
         System.debug(LoggingLevel.DEBUG, 'myRecord ' + myRecord);
         database.update(myRecord);
         return myRecord;

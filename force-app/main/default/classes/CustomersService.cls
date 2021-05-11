@@ -14,7 +14,7 @@ public with sharing class CustomersService {
      * @return            returns the new customer with Id
      */
     public Customer insertOneCustomer(Customer myCustomer){
-        System.debug(LoggingLevel.DEBUG, 'insertOneCustomer()');
+        System.debug(LoggingLevel.DEBUG, 'CustomersService.insertOneCustomer()');
         System.debug(LoggingLevel.DEBUG, 'myCustomer ' + myCustomer);
         Customer result = crud.insertOneCustomer(myCustomer);
         System.debug(LoggingLevel.DEBUG, 'result ' + result);
@@ -26,7 +26,7 @@ public with sharing class CustomersService {
      * @return            returns the same record
      */
     public Customer updateOneCustomer(Customer myCustomer){
-        System.debug(LoggingLevel.DEBUG, 'updateOneCustomer()');
+        System.debug(LoggingLevel.DEBUG, 'CustomersService.updateOneCustomer()');
         System.debug(LoggingLevel.DEBUG, 'myCustomer ' + myCustomer);
         Customer result = crud.updateOneCustomer(myCustomer);
         System.debug(LoggingLevel.DEBUG, 'result ' + result);
@@ -38,7 +38,7 @@ public with sharing class CustomersService {
      * @return              returns the result of the query
      */
     public Customer selectById(String customerId){
-        System.debug(LoggingLevel.DEBUG, 'selectById()');
+        System.debug(LoggingLevel.DEBUG, 'CustomersService.selectById()');
         System.debug(LoggingLevel.DEBUG, 'customerId ' + customerId);
         Customer result = crud.selectOneCustomerById(customerId, new List<String>{'id', 'name'});
         System.debug(LoggingLevel.DEBUG, 'result ' + result);

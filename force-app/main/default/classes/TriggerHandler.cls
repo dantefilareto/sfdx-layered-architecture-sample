@@ -9,7 +9,7 @@ public with sharing class TriggerHandler {
     @TestVisible private Type domainType;
     
     public TriggerHandler(List<Object> triggerNew, Map<Id, Object> triggerOldMap, Type domainType){
-        System.debug(LoggingLevel.DEBUG, 'TriggerHandler.handleTrigger');
+        System.debug(LoggingLevel.DEBUG, 'TriggerHandler');
         System.debug(LoggingLevel.DEBUG, 'triggerNew ' + triggerNew);
         System.debug(LoggingLevel.DEBUG, 'triggerOldMap ' + triggerOldMap);
         System.debug(LoggingLevel.DEBUG, 'domainType ' + domainType);

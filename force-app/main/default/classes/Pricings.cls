@@ -5,7 +5,7 @@
  */
 public with sharing class Pricings implements TriggerHandlerInterface{
     public void setinitialDisbursedPrice(List<Pricing__c> triggerNew){
-        System.debug(LoggingLevel.DEBUG, 'TriggerHandler.setinitialDisbursedPrice');
+        System.debug(LoggingLevel.DEBUG, 'Pricings.setinitialDisbursedPrice');
         System.debug(LoggingLevel.DEBUG, 'triggerNew ' + triggerNew);
         for(Pricing__c pricing : triggerNew){
             if(!isEu2(pricing)){
@@ -20,13 +20,13 @@ public with sharing class Pricings implements TriggerHandlerInterface{
         }
     }
     public Boolean isEu2(Pricing__c obj){
-        System.debug(LoggingLevel.DEBUG, 'TriggerHandler.isEu2');
+        System.debug(LoggingLevel.DEBUG, 'Pricings.isEu2');
         System.debug(LoggingLevel.DEBUG, 'obj ' + obj);
         return obj.CurrencyIsoCode == CurrencyIsoCode.GBP;
     }
     
     public void onBeforeInsert(List<Object> triggerNew){
-        System.debug(LoggingLevel.DEBUG, 'TriggerHandler.onBeforeInsert');
+        System.debug(LoggingLevel.DEBUG, 'Pricings.onBeforeInsert');
         System.debug(LoggingLevel.DEBUG, 'triggerNew ' + triggerNew);
         // LE-498 Update the disbursed amount fields when a pricing record is created on EU2
         setinitialDisbursedPrice((List<Pricing__c>) triggerNew);
