@@ -1,0 +1,3 @@
+java -jar apexdoc.jar -s '/Users/Dante Filareto/Desktop/sfdx/Layered architecture/force-app/main/default/classes' -t '/Users/Dante Filareto/Desktop/apexdocexport'
+
+https://github.com/SalesforceFoundation/ApexDoc/releases/tag/1.1.7
